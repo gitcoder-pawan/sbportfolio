@@ -1,0 +1,886 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #131212;
+  opacity: .9;
+  color: #bfc1c4;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: -webkit-gradient(linear, left top, right top, from(#f121e0), color-stop(#00e1ff), to(#fd6a08));
+  background: linear-gradient(to right, #f121e0, #00e1ff, #fd6a08);
+  -webkit-box-shadow: inset 0 0 10px rgba(11, 12, 11, 0.5);
+          box-shadow: inset 0 0 10px rgba(11, 12, 11, 0.5);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fc0e85), to(#0ae1fd));
+  background: linear-gradient(to bottom, #fc0e85, #0ae1fd);
+  border-radius: 10px;
+  height: 10px;
+}
+
+.dimension {
+  min-height: 100vh;
+  padding: 2rem;
+  width: 100vw;
+  position: relative;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#arrow {
+  border: 1px solid #0ce1e9;
+  padding: .5rem .7rem;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 0 2rem 1.47rem 2rem;
+}
+
+#arrow i {
+  font-size: 2rem;
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+#arrow:hover {
+  -webkit-box-shadow: 0 0 10px aqua;
+          box-shadow: 0 0 10px aqua;
+}
+
+#arrow:hover i {
+  color: aqua;
+}
+
+#navbar {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  z-index: 1;
+  border-bottom: 2px solid red;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #9ea1a5;
+}
+
+#navbar a:hover {
+  color: #29c7cc;
+  -webkit-box-shadow: 0 0 10px aqua;
+          box-shadow: 0 0 10px aqua;
+  padding: .2rem .3rem;
+}
+
+header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  z-index: -1;
+}
+
+header .picdetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-transform: translateY(-10vh);
+          transform: translateY(-10vh);
+}
+
+header .picdetails .wave {
+  position: relative;
+  bottom: -2rem;
+  -webkit-animation-name: wave-animation;
+          animation-name: wave-animation;
+  /* Refers to the name of your @keyframes element below */
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  /* Change to speed up or slow down */
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  /* Never stop waving :) */
+  -webkit-transform-origin: 70% 70%;
+          transform-origin: 70% 70%;
+  /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@-webkit-keyframes wave-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(14deg);
+            transform: rotate(14deg);
+  }
+  /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  30% {
+    -webkit-transform: rotate(14deg);
+            transform: rotate(14deg);
+  }
+  40% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  60% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  /* Reset for the last half to pause */
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(14deg);
+            transform: rotate(14deg);
+  }
+  /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  30% {
+    -webkit-transform: rotate(14deg);
+            transform: rotate(14deg);
+  }
+  40% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  60% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  /* Reset for the last half to pause */
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+header .picdetails h1 {
+  color: #29c7cc;
+  margin-bottom: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 4rem;
+}
+
+header .picdetails h1:nth-child(2) {
+  text-shadow: 2px 2px .3rem red;
+}
+
+header .picdetails P {
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: .1rem;
+}
+
+header .picdetails a {
+  color: antiquewhite;
+}
+
+header .picdetails i {
+  border: 1px solid white;
+  font-size: 3rem;
+  padding: .5rem .8rem;
+}
+
+header .picdetails i:hover {
+  -webkit-box-shadow: 0 0 1rem aqua;
+          box-shadow: 0 0 1rem aqua;
+  color: aqua;
+}
+
+header .picdetails i:nth-child(2) {
+  margin: 0 1rem;
+}
+
+header .picdetails .resume {
+  position: relative;
+  bottom: -15vh;
+}
+
+header .picdetails .resume button {
+  border: 1px solid #f50b0b;
+  height: 2.5rem;
+  width: 15rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  font-weight: bold;
+  color: #e6e7e6;
+  background: #000;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header .picdetails .resume button:hover {
+  border: 2px solid #07dbfc;
+  color: aqua;
+}
+
+.heading {
+  text-shadow: 2px 2px .2rem aqua;
+  border: 1px solid #ce0303;
+  -webkit-box-shadow: 0 0 0.6rem #c00505;
+          box-shadow: 0 0 0.6rem #c00505;
+  height: 10vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 4px;
+  padding: 1.5rem 0 2rem 0;
+}
+
+#about {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+}
+
+#about .aboutme {
+  width: 70%;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  line-height: 30px;
+  color: yellow;
+  margin-bottom: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 100;
+}
+
+#about .education {
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#about .education .edu {
+  width: 100%;
+  border: 1px solid white;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 30px;
+  color: #29c7cc;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#about .education .edu span {
+  font-size: 60%;
+}
+
+#about .education .edu:nth-child(2) {
+  margin: 0 5rem;
+}
+
+#about .education .edu h3 {
+  color: #bbc0c9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#about .education .edu .line {
+  width: 100%;
+  height: 1px;
+  background: #ece3e3;
+  margin: 1rem 0;
+}
+
+#about .psnl {
+  padding-top: 2rem;
+  width: 70%;
+  height: 25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  line-height: 3rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#about .psnl span {
+  font-family: cursive;
+  color: #29c7cc;
+  font-size: 80%;
+}
+
+.skill_ .type {
+  padding: 1rem 0;
+}
+
+.skill_ .type div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.skill_ .type div .t {
+  display: block;
+  width: 100%;
+  height: .5rem;
+  background: #575656;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.skill_ .type div .t .sxt {
+  width: 60%;
+}
+
+.skill_ .type div .t .sxt5 {
+  width: 65%;
+}
+
+.skill_ .type div .t .svt {
+  width: 70%;
+}
+
+.skill_ .type div .t .svt5 {
+  width: 75%;
+}
+
+.skill_ .type div .t .et {
+  width: 80%;
+}
+
+.skill_ .type div .t .et5 {
+  width: 85%;
+}
+
+.skill_ .type div .t .nt {
+  width: 90%;
+}
+
+.skill_ .type div .t div {
+  position: absolute;
+  height: inherit;
+  background: #3bca0f;
+  border-radius: 1rem;
+  border: 1px solid #06661b;
+}
+
+#skills {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#skills .skill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 1.5rem .5rem;
+}
+
+#skills .skill .tech {
+  width: 60%;
+  margin-bottom: 2rem;
+}
+
+#skills .skill .tech h2 {
+  color: #e0e00b;
+  text-align: center;
+  font-size: 220%;
+  line-height: 3rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 1px;
+}
+
+#skills .skill .tech h3 {
+  color: #29c7cc;
+}
+
+#skills .achievement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#skills .achievement h2 {
+  color: #d4d406;
+  text-align: center;
+  font-size: 250%;
+  line-height: 3rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+#skills .achievement h3 {
+  letter-spacing: -.25px;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #29c7cc;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#skills .achievement h3 span {
+  color: white;
+}
+
+#projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#projects .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#projects .project .playout {
+  height: 15rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-bottom: 4rem;
+}
+
+#projects .project .playout .pdetail {
+  width: 50%;
+  text-align: left;
+  color: yellow;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#projects .project .playout .pdetail a {
+  text-decoration: none;
+}
+
+#projects .project .playout .pdetail h3 {
+  color: antiquewhite;
+  font-size: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: .5rem;
+}
+
+#projects .project .playout .pdetail h3:hover {
+  color: #29c7cc;
+}
+
+#projects .project .playout .pimage {
+  width: 40%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-radius: 20px;
+}
+
+#projects .project .playout .pimage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#workxp {
+  font-size: 110%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 100vh;
+}
+
+#workxp .left {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#workxp .left h1 {
+  color: #afb6c0;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  text-shadow: 1px 1px .1rem aqua;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  margin-left: 40px;
+}
+
+#workxp .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#workxp .dotblue {
+  color: #3e8afc;
+}
+
+#workxp .bar {
+  position: relative;
+}
+
+#workxp .rod {
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background: #05b864;
+  border-radius: 10rem;
+}
+
+#workxp .dot h1 {
+  margin: 0;
+}
+
+#workxp .dot {
+  font-size: 60px;
+  margin-bottom: 10px;
+  position: relative;
+  left: -10px;
+  top: -1rem;
+}
+
+#workxp .content {
+  padding: .4rem 1rem;
+}
+
+#workxp .content .cont1 {
+  padding: .4rem 0;
+}
+
+#workxp .content h3 {
+  margin: 1rem 0;
+  color: #17e2e2;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#workxp .content p {
+  word-spacing: .1rem;
+  margin-bottom: 0;
+  color: #cfcf09;
+  font-size: 110%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#workxp .content .mov {
+  -webkit-transform: translateY(-0.8rem);
+          transform: translateY(-0.8rem);
+}
+
+#workxp .move {
+  -webkit-transform: translateY(-0.8rem);
+          transform: translateY(-0.8rem);
+}
+
+#contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem;
+  z-index: -1;
+  height: 88.7vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#contact .cdetail {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.5rem;
+  position: relative;
+  z-index: -1;
+}
+
+#contact .cdetail .cbox {
+  border: 1px solid transparent;
+  width: 20rem;
+  padding: 2.5rem 1rem;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact .cdetail .cbox:nth-child(2) {
+  position: relative;
+  left: -25px;
+}
+
+#contact .cdetail .cbox:nth-child(3) {
+  position: relative;
+  left: -15px;
+}
+
+#contact .cdetail .cbox .cicon {
+  color: antiquewhite;
+  width: 35%;
+  text-align: right;
+  font-size: 3rem;
+  padding-right: 2rem;
+}
+
+#contact .cdetail .cbox .cname {
+  font-size: 100%;
+  color: #29c7cc;
+}
+
+#contact .cdetail .cbox .cname h2 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#contact .cdetail .cbox .cname p {
+  color: yellow;
+  letter-spacing: 1px;
+}
+
+#footer {
+  border-top: 2px solid red;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem 0;
+}
+
+#footer h3 {
+  color: aqua;
+}
+
+#footer p {
+  color: yellow;
+}
+
+@media only screen and (max-width: 840px) {
+  #about .education .edu {
+    width: 100%;
+  }
+  #about .education .edu:nth-child(2) {
+    margin: 0 3rem;
+  }
+  #projects .project .playout {
+    height: 25rem;
+    margin-bottom: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #projects .project .playout .pdetail {
+    width: 80%;
+  }
+  #projects .project .playout .pdetail h3 {
+    font-size: 1.5rem;
+  }
+  #projects .project .playout .pimage {
+    height: 50%;
+    width: 80%;
+    position: relative;
+    top: -1rem;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  #about .education .edu:nth-child(2) {
+    margin: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  #about .education {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #about .education .edu:nth-child(2) {
+    margin: 2rem 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #workxp {
+    font-size: 100%;
+    margin-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .left {
+    margin: 3rem 0;
+    left: 50%;
+    -webkit-transform: translate(-20%);
+            transform: translate(-20%);
+  }
+  .right {
+    margin-left: 2rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */
